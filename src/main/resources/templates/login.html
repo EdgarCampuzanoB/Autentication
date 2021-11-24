@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="layouts/base-layout::head">
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body class="text-center">
+
+    <div class="container-fluid text-center">
+        <div class="row mt-5">
+            <div class="col-4">
+                <div th:if="${param.error}" class="alert alert-danger mb-3">Error de Usuario o Contraseña</div>
+            </div>
+            <div class="col-4">
+                <main class="form-signin">
+
+
+                    <form method="POST" th:action="@{/auth/login-post}" role="form">
+                        <h1 class="h3 mb-3 fw-normal">Iniciar Sesion</h1>
+
+                        <div class="form-floating">
+                            <input type="text" name="username" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Usuario</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <label for="floatingPassword">Contraseña</label>
+                        </div>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar Sesión</button>
+                    </form>
+                </main>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>
